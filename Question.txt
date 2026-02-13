@@ -1,0 +1,210 @@
+🧪 SDP Open Book Examination
+Project Option: GitHub Issue Tracker Clone (Frontend Only SPA)
+
+Duration: 5 Hours (Development)
+Evaluation: 2:00 – 4:00 PM (Demo + GitHub Review)
+Difficulty Level: Medium → Moderate Advanced (MCA Level)
+Backend: ❌ Not Allowed (Use Mock API Only)
+
+📌 Problem Statement
+
+Design and implement a GitHub Issue Tracker Clone (Frontend Only) using React.
+
+The system must simulate:
+
+Viewing repository issues
+
+Creating new issues
+
+Filtering issues by status
+
+Viewing issue details via nested routes
+
+Managing server state using React Query
+
+Applying code splitting
+
+Writing integration tests
+
+This project evaluates:
+
+SPA routing architecture
+
+Server state patterns
+
+Form validation
+
+Nested routing
+
+Code splitting
+
+Integration testing
+
+Clean component composition
+
+🎯 SECTION A — CORE REQUIREMENTS (70 Marks)
+1️⃣ Issue List Page (20 Marks)
+Route
+/issues
+
+Functional Requirements
+
+Display list of issues fetched from mock API.
+
+Each issue card must show:
+
+Issue title
+
+Issue number (#ID)
+
+Status (Open / Closed)
+
+Labels (optional)
+
+Created date
+
+“View Details” button
+
+Technical Requirements
+
+Use React Query:
+
+GET /issues
+
+
+Handle:
+
+Loading state
+
+Error state
+
+Empty state
+
+Use reusable IssueCard component
+
+2️⃣ Create Issue Form (15 Marks)
+Route
+/issues/new
+
+Form Fields
+
+Title (required)
+
+Description (required)
+
+Labels (multi-select optional)
+
+Status (Open/Closed)
+
+Validation
+
+Use React Hook Form
+
+Use Yup validation
+
+Show inline validation errors
+
+Submission
+
+Use useMutation
+
+After success:
+
+Redirect to /issues
+
+Invalidate query cache
+
+3️⃣ Status Filtering (10 Marks)
+Functional Requirements
+
+Allow filtering issues by:
+
+All
+
+Open
+
+Closed
+
+Filtering must update UI instantly.
+
+Technical Requirements
+
+Use local state for filter
+
+Use useMemo to compute filtered list
+
+Avoid unnecessary re-renders
+
+Explain:
+
+Why filter logic should not modify server state directly
+
+4️⃣ Issue Details (Nested Routing) (15 Marks)
+Routes
+/issues/:issueId
+/issues/:issueId/edit (optional bonus)
+
+Functional Requirements
+
+Display:
+
+Full issue title
+
+Full description
+
+Status
+
+Labels
+
+Created date
+
+Add:
+
+“Back to Issues” link
+
+Technical Requirements
+
+Use nested routing with Outlet
+
+Use useParams
+
+Fetch issue using React Query:
+
+GET /issues/:id
+
+
+Must use caching
+
+5️⃣ Server State Pattern Implementation (10 Marks)
+
+You must:
+
+Use useQuery for issue list
+
+Use useMutation for creating issues
+
+Demonstrate cache invalidation
+
+Explain in comments:
+
+Difference between client state (filters)
+
+Server state (issues)
+
+6️⃣ Code Splitting (10 Marks)
+
+You must:
+
+Use React.lazy
+
+Wrap routes in Suspense
+
+Lazy load:
+
+IssueDetails page
+
+CreateIssue page
+
+Explain:
+
+Why code splitting improves performance in large apps
